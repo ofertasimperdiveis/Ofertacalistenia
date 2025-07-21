@@ -10,8 +10,7 @@
     src="https://cdn.utmify.com.br/scripts/utms/latest.js"
     data-utmify-prevent-xcod-sck
     data-utmify-prevent-subids
-    async
-    defer
+    async defer
   ></script>
 
   <!-- Meta Pixel Code -->
@@ -26,7 +25,6 @@
     <img height="1" width="1" style="display:none"
       src="https://www.facebook.com/tr?id=620899104387300&ev=PageView&noscript=1"/>
   </noscript>
-  <!-- End Meta Pixel Code -->
 
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet"/>
   <style>
@@ -82,15 +80,9 @@
       opacity: 0; transform: translateY(20px);
       transition: opacity .8s ease-out, transform .8s ease-out;
     }
-    .hero-content.visible {
-      opacity: 1; transform: none;
-    }
-    .hero-content h1 {
-      font-size: 3rem; margin-bottom: 1rem;
-    }
-    .hero-content p {
-      font-size: 1.3rem; margin-bottom: 1.5rem;
-    }
+    .hero-content.visible { opacity: 1; transform: none; }
+    .hero-content h1 { font-size: 3rem; margin-bottom: 1rem; }
+    .hero-content p { font-size: 1.3rem; margin-bottom: 1.5rem; }
     .hero-content a.btn-cta {
       background: var(--accent); color: var(--text-light);
       padding: 1rem 2.5rem; font-size: 1.2rem; border-radius: 50px;
@@ -117,7 +109,7 @@
     }
     .header-btn.show { opacity: 1; visibility: visible; }
 
-    /* sections reveal */
+    /* reveal sections */
     section {
       padding: 4rem 2rem; background: var(--section-bg);
       opacity: 0; transform: translateY(20px);
@@ -161,8 +153,8 @@
     /* learning & bonuses */
     .learning ul, .bonuses ul { list-style: none; padding-left: 0; }
     .learning li, .bonuses li {
-      margin-bottom: 1rem; padding-left: 1.5rem; position: relative;
-      color: var(--text-dark);
+      margin-bottom: 1rem; padding-left: 1.5rem;
+      position: relative; color: var(--text-dark);
     }
     .learning li::before, .bonuses li::before {
       content: '•'; position: absolute; left: 0;
@@ -197,17 +189,19 @@
     .stars { display: flex; gap: 4px; margin-top: .5rem; }
     .stars span { color: var(--star); }
 
-    /* video & offer focus on mobile */
+    /* ---------- Video Section ---------- */
     .video-container {
       max-width: 1000px; margin: 1rem auto;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      background: linear-gradient(135deg, var(--accent), var(--accent2)); 
+      /* ALTERAÇÃO: restaurada a caixa de fundo */
       padding: 1rem; border-radius: 16px;
       box-shadow: 0 8px 24px rgba(0,0,0,0.5);
       text-align: center;
     }
     .video-container h2 {
       color: var(--text-light); font-size: 1.8rem;
-      margin-bottom: .5rem;
+      margin: 0 auto 0.5rem;
+      /* ALTERAÇÃO: centralizado o título */
     }
     .video-wrapper {
       position: relative; padding-bottom: 56.25%; height: 0;
@@ -217,55 +211,67 @@
       position:absolute; top:0; left:0;
       width:100%; height:100%; border:0;
     }
+
+    /* Offer Section */
     .offer-box {
       max-width: 1000px; margin: 1rem auto;
       background: linear-gradient(135deg, var(--accent), var(--accent2));
       padding: 1.5rem; border-radius: 24px;
       box-shadow: 0 12px 40px rgba(230,57,70,0.6);
-      text-align: center;
-    }
-    .offer-box .new-price { font-size: 2.5rem; }
-    .offer-box .btn-cta {
-      display: block; width: 90%; margin: 1rem auto 0;
-      padding: 1rem; font-size: 1rem;
-    }
-
-    /* offer general */
-    .offer-box::before {
-      content: ''; position: absolute; top: 0; left: 0;
-      width:100%; height:100%;
-      background: radial-gradient(circle at center, rgba(255,255,255,0.1), transparent 70%);
+      text-align: center; position: relative;
     }
     .offer-box .old-price {
-      text-decoration: line-through; font-size:1.4rem; opacity:.6;
+      text-decoration: line-through; font-size: 1.4rem; opacity: .6;
+    }
+    .offer-box .new-price {
+      font-size: 2.5rem; font-weight: 700; margin: .5rem 0;
     }
     .offer-box small {
-      display: block; margin-top:.5rem; color: var(--text-light);
+      display: block; margin-top: .5rem; color: var(--text-light);
+    }
+    .offer-box .btn-cta {
+      background: var(--text-light); color: var(--accent);
+      width: 90%; max-width: 300px; margin: 1rem auto 0;
+      padding: 1rem; font-size: 1rem; border-radius: 50px;
+      text-decoration: none; display: block;
     }
     .offer-box .payment-methods {
-      display:block; margin:1rem auto 0; max-width:300px; opacity:.9;
+      display: block; margin: 1rem auto 0;
+      max-width: 250px; opacity: .9;
     }
 
-    /* offer & video mobile */
-    @media(max-width:480px){
-      .video-container{padding:.5rem;}
-      .video-container h2{font-size:1.4rem;}
-      .offer-box{margin:.5rem;padding:.5rem;}
-      .offer-box .new-price{font-size:2rem;}
-      .offer-box .btn-cta{width:100%;padding:1rem;font-size:1rem;}
+    /* Mobile tweaks */
+    @media (max-width: 480px) {
+      /* Buttons full width */
+      .hero-content a.btn-cta,
+      .offer-box .btn-cta {
+        display: block;
+        width: 100% !important;
+        max-width: none;
+        padding: 1.2rem 1rem !important;
+        font-size: 1.1rem !important;
+        box-sizing: border-box;
+      }
+      /* Offer box */
+      .offer-box {
+        margin: 0.5rem !important;
+        padding: 1rem !important;
+        border-radius: 0 !important;
+      }
+      /* Floating button */
+      .header-btn {
+        width: 90% !important;
+        padding: 1rem !important;
+        right: 5% !important;
+        bottom: 1rem !important;
+        box-sizing: border-box;
+      }
+      /* Video full width for mobile */
+      .video-container {
+        width: 100% !important; padding: 0 !important; border-radius: 0 !important;
+      }
+      .video-wrapper { padding-bottom: 75%; }
     }
-
-    /* rest of styles (FAQ, guarantee, footer) */
-    .offer-box .btn-cta { background: var(--text-light); color: var(--accent); border-radius:50px; text-decoration:none; }
-    .faq-item { margin-bottom:1rem; overflow:hidden; background:var(--dark-bg); border-radius:8px; }
-    .faq-question { padding:1rem 1.5rem; cursor:pointer; position:relative; color:var(--text-light); }
-    .faq-question::after { content:'+'; position:absolute; right:1.5rem; color:var(--accent); transition:transform .3s; }
-    .faq-item.active .faq-question::after { transform:rotate(45deg); }
-    .faq-answer { max-height:0; padding:0 1.5rem; background:var(--section-bg); color:var(--text-light); overflow:hidden; transition:max-height .5s ease; }
-    .faq-item.active .faq-answer { max-height:200px; padding:1rem 1.5rem; }
-    .guarantee { background:var(--section-bg); padding:2rem; border-radius:10px; text-align:center; box-shadow:0 6px 20px rgba(0,0,0,0.5); }
-    .guarantee img{max-width:200px;} .guarantee h2{color:var(--accent); margin:.5rem 0;} .guarantee p{margin:.5rem 0;}
-    footer{ text-align:center; padding:2rem; font-size:.9rem; color:var(--text-dark); background:var(--dark-bg);}  
   </style>
 </head>
 <body>
@@ -299,19 +305,19 @@
     </div>
   </section>
 
-  <!-- Before & After -->
+  <!-- Antes & Depois -->
   <section class="before-after container">
     <h2 class="section-title">Antes e Depois</h2>
     <img src="https://guiadacalistenia.shop/images/Captura-de-tela-2025-07-13-230817-1024x811.png" alt="Antes e Depois"/>
   </section>
 
-  <!-- Course Content -->
+  <!-- Conteúdo do Curso -->
   <section class="course-content container">
     <h2 class="section-title">Conteúdo do Curso</h2>
     <img src="https://guiadacalistenia.shop/images/site.png" alt="Conteúdo do Curso"/>
   </section>
 
-  <!-- Features -->
+  <!-- O Que Está Incluído -->
   <section id="features" class="container">
     <h2 class="section-title">O Que Está Incluído</h2>
     <div class="features">
@@ -321,7 +327,7 @@
     </div>
   </section>
 
-  <!-- Learning -->
+  <!-- Você Vai Aprender -->
   <section class="learning container">
     <h2 class="section-title">Você Vai Aprender</h2>
     <ul class="learning">
@@ -334,7 +340,7 @@
     </ul>
   </section>
 
-  <!-- Bonuses -->
+  <!-- Bônus Exclusivos -->
   <section class="bonuses container">
     <h2 class="section-title">Bônus Exclusivos</h2>
     <ul class="bonuses">
@@ -345,7 +351,7 @@
     </ul>
   </section>
 
-  <!-- Reviews -->
+  <!-- Depoimentos -->
   <section id="reviews" class="reviews container">
     <h2 class="section-title">O Que Nossos Alunos Dizem</h2>
     <div class="review-slider">
@@ -355,7 +361,7 @@
     </div>
   </section>
 
-  <!-- Offer -->
+  <!-- Oferta -->
   <section id="offer" class="container">
     <div class="offer-box">
       <div class="old-price">De R$ 159,90</div>
@@ -375,7 +381,7 @@
     <div class="faq-item"><div class="faq-question">Como recebo o acesso?</div><div class="faq-answer"><p>Após compra, envio login por e‑mail.</p></div></div>
   </section>
 
-  <!-- Guarantee -->
+  <!-- Garantia -->
   <section class="container guarantee">
     <img src="https://guiadacalistenia.shop/images/risco-zero-oab-1.png" alt="Garantia"/>
     <h2>Garantia Incondicional de 7 Dias</h2>
