@@ -21,7 +21,6 @@
     a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
     document.head.appendChild(a);
   </script>
-  <!-- End Meta Pixel Code -->
   <noscript>
     <img height="1" width="1" style="display:none"
       src="https://www.facebook.com/tr?id=620899104387300&ev=PageView&noscript=1" />
@@ -113,6 +112,11 @@
       .nav ul { gap: 0.5rem; }
       .nav ul li a { font-size: 0.8rem; padding: 0.3rem; }
       .offer-box .btn-cta { display: flex; align-items: center; justify-content: center; white-space: normal; text-align: center; padding: 1.65rem 2.2rem; font-size: 0.95rem; line-height: 1.2; width: 99%; margin: 1.5rem auto 0; box-sizing: border-box; }
+      /* Aumentar o vídeo em 150% no celular */
+      .video-box iframe {
+        width: 150% !important;
+        margin-left: -25% !important;
+      }
     }
   </style>
 </head>
