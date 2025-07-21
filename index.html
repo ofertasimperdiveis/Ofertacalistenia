@@ -6,27 +6,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Transforme Seu Corpo com Calistenia</title>
   <script
-  src="https://cdn.utmify.com.br/scripts/utms/latest.js"
-  data-utmify-prevent-xcod-sck
-  data-utmify-prevent-subids
-  async
-  defer
-></script>
- <!-- Meta Pixel Code -->
-<script>
-  window.pixelId = "687e519bb27a6a92659b0363";
-  var a = document.createElement("script");
-  a.setAttribute("async", "");
-  a.setAttribute("defer", "");
-  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
-  document.head.appendChild(a);
-</script>
-<!-- End Meta Pixel Code -->
+    src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+    data-utmify-prevent-xcod-sck
+    data-utmify-prevent-subids
+    async
+    defer
+  ></script>
+  <!-- Meta Pixel Code -->
+  <script>
+    window.pixelId = "687e519bb27a6a92659b0363";
+    var a = document.createElement("script");
+    a.setAttribute("async", "");
+    a.setAttribute("defer", "");
+    a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+    document.head.appendChild(a);
+  </script>
+  <!-- End Meta Pixel Code -->
   <noscript>
     <img height="1" width="1" style="display:none"
       src="https://www.facebook.com/tr?id=620899104387300&ev=PageView&noscript=1" />
   </noscript>
-  <!-- End Meta Pixel Code -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     html { scroll-behavior: smooth; }
@@ -184,7 +183,7 @@
       border-radius: 12px;
     }
     /* features */
-    .container { max-width: 1100px; margin: auto; }
+    .container { max-width: 1100px; margin: 0 auto; }
     .section-title {
       text-align: center;
       margin-bottom: 2rem;
@@ -281,6 +280,26 @@
       background: transparent; color: var(--text-light);
       border: 2px solid var(--text-light);
     }
+
+    /* vídeo embed – centralizado */
+    .video-box {
+      background: linear-gradient(135deg, #e63946, #ff4e50);
+      padding: 1rem;
+      border-radius: 24px;
+      margin: 3rem auto;
+      max-width: 1100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .video-box iframe {
+      width: 100%;
+      max-width: 800px;
+      aspect-ratio: 16 / 9;
+      border: none;
+    }
+
     /* FAQ */
     .faq-item {
       background: var(--dark-bg); border-radius: 8px; margin-bottom: 1rem; overflow: hidden;
@@ -326,8 +345,8 @@
         justify-content: center;
         white-space: normal;
         text-align: center;
-        padding: 1.65rem 2.2rem; /* +10% padding */
-        font-size: 0.95rem;     /* -5% font-size */
+        padding: 1.65rem 2.2rem;
+        font-size: 0.95rem;    
         line-height: 1.2;
         width: 99%;
         margin: 1.5rem auto 0;
@@ -358,6 +377,15 @@
     </div>
     <button id="btn-aproveitar" class="header-btn">APROVEITAR OFERTA</button>
   </header>
+
+  <section class="video-box">
+    <h2 class="section-title">Assista ao Vídeo</h2>
+    <iframe title="vimeo-player"
+            src="https://player.vimeo.com/video/1102847107?h=e0cb9a7e65&autoplay=1"
+            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+            allowfullscreen>
+    </iframe>
+  </section>
 
   <section class="before-after container">
     <h2 class="section-title">Antes e Depois</h2>
