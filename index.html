@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -283,8 +284,7 @@
       display: block; margin-top: .5rem; color: var(--text-light);
     }
     .offer-box .payment-methods {
-      display: block; margin: 1.5rem auto 0; max-width:
-300px; opacity: .9;
+      display: block; margin: 1.5rem auto 0; max-width: 300px; opacity: .9;
     }
     @keyframes softPulse {
       0%,100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255,255,255,0.4); }
@@ -319,38 +319,32 @@
     }
     .faq-item.active .faq-question::after { transform: rotate(45deg); }
     .faq-answer {
-      max-height: 0; padding: 0 1.5rem; background:
-var(--section-bg); color: var(--text-light);
-      opacity: 0; transition: max-height .5s ease,
-padding .5s ease;
+      max-height: 0; padding: 0 1.5rem; background: var(--section-bg);
+      color: var(--text-light); opacity: 0;
+      transition: max-height .5s ease, padding .5s ease;
     }
     .faq-item.active .faq-answer {
-      max-height: 200px; opacity: 1; padding: 1rem
-1.5rem;
+      max-height: 200px; opacity: 1; padding: 1rem 1.5rem;
     }
 
     /* garantia */
     .guarantee {
       background: var(--section-bg); text-align: center;
-      border-radius: 10px; padding: 2rem; box-shadow: 0
-6px 20px rgba(0,0,0,0.5);
-      display: flex; flex-direction: column;
-align-items: center; gap: 1rem;
+      border-radius: 10px; padding: 2rem; box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+      display: flex; flex-direction: column; align-items: center; gap: 1rem;
     }
     .guarantee img { max-width: 200px; }
-    .guarantee h2 { color: var(--accent);
-margin-bottom: .5rem; }
-    .guarantee p { color: var(--text-light);
-margin: .5rem 0; }
+    .guarantee h2 { color: var(--accent); margin-bottom: .5rem; }
+    .guarantee p { color: var(--text-light); margin: .5rem 0; }
 
     /* footer */
     footer {
       text-align: center; padding: 2rem;
-font-size: .9rem; color: var(--text-dark);
+      font-size: .9rem; color: var(--text-dark);
       background: var(--dark-bg);
     }
 
-    /* mobile: compact nav */
+    /* mobile: compact nav & centralize CTA */
     @media (max-width: 480px) {
       .nav {
         padding: 0.5rem 1rem;
@@ -364,6 +358,12 @@ font-size: .9rem; color: var(--text-dark);
       .nav ul li a {
         font-size: 0.8rem;
         padding: 0.3rem;
+      }
+      .offer-box .btn-cta {
+        display: block;
+        margin: 1.5rem auto 0;
+        width: 80%;
+        box-sizing: border-box;
       }
     }
   </style>
@@ -383,7 +383,7 @@ font-size: .9rem; color: var(--text-dark);
     <div class="hero-content">
       <h1>Transforme Seu Corpo com +500 Movimentos de Calistenia</h1>
       <p>Treine em casa, na rua ou onde quiser — sem academia ou equipamento!</p>
-      <a href="#offer" class="btn-cta">SIM, QUERO COMEÇAR AGORA!</a>
+      <a href="https://go.hotmart.com/X100935210N?ap=62d4" class="btn-cta">SIM, QUERO COMEÇAR AGORA!</a>
       <div id="timer" class="timer">
         Oferta termina em: <span id="countdown">00:00:00</span>
       </div>
@@ -405,18 +405,9 @@ font-size: .9rem; color: var(--text-dark);
     <div class="container">
       <h2 class="section-title">O Que Está Incluído</h2>
       <div class="features">
-        <div class="feature-item">
-          <h3>Acesso Imediato</h3>
-          <p>Desafio +500 Movimentos para queima de gordura.</p>
-        </div>
-        <div class="feature-item">
-          <h3>Gifs Interativos</h3>
-          <p>Execução perfeita com animações passo a passo.</p>
-        </div>
-        <div class="feature-item">
-          <h3>Treinos Dinâmicos</h3>
-          <p>Planejamento inteligente para evolução constante.</p>
-        </div>
+        <div class="feature-item"><h3>Acesso Imediato</h3><p>Desafio +500 Movimentos para queima de gordura.</p></div>
+        <div class="feature-item"><h3>Gifs Interativos</h3><p>Execução perfeita com animações passo a passo.</p></div>
+        <div class="feature-item"><h3>Treinos Dinâmicos</h3><p>Planejamento inteligente para evolução constante.</p></div>
       </div>
     </div>
   </section>
@@ -446,21 +437,9 @@ font-size: .9rem; color: var(--text-dark);
   <section id="reviews" class="reviews container">
     <h2 class="section-title">O Que Nossos Alunos Dizem</h2>
     <div class="review-slider">
-      <div class="review-item">
-        <h4>João Silva</h4>
-        <div class="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-        <p>Em apenas 2 semanas, minha força explodiu e meu abdômen nunca esteve tão definido.</p>
-      </div>
-      <div class="review-item">
-        <h4>Mariana Costa</h4>
-        <div class="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-        <p>Hoje faço front lever com controle total. Nunca imaginei evoluir tão rápido!</p>
-      </div>
-      <div class="review-item">
-        <h4>Lucas Pereira</h4>
-        <div class="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-        <p>Os vídeos e GIFs são impecáveis. Tornei-me uma máquina de calistenia!</p>
-      </div>
+      <div class="review-item"><h4>João Silva</h4><div class="stars">★★★★★</div><p>Em apenas 2 semanas, minha força explodiu...</p></div>
+      <div class="review-item"><h4>Mariana Costa</h4><div class="stars">★★★★★</div><p>Hoje faço front lever com controle total...</p></div>
+      <div class="review-item"><h4>Lucas Pereira</h4><div class="stars">★★★★★</div><p>Os vídeos e GIFs são impecáveis...</p></div>
     </div>
   </section>
 
@@ -469,7 +448,7 @@ font-size: .9rem; color: var(--text-dark);
       <div class="old-price">De R$ 159,90</div>
       <div class="new-price">Por R$ 19,90</div>
       <small>ou 4x de R$ 10,60 sem juros</small>
-      <a href="#checkout" class="btn-cta">SIM, QUERO COMEÇAR AGORA!</a>
+      <a href="https://go.hotmart.com/X100935210N?ap=62d4" class="btn-cta">SIM, QUERO COMEÇAR AGORA!</a>
       <img src="https://d2r9epyceweg5n.cloudfront.net/stores/001/860/687/rte/NO%20CART%C3%83O%20(1).png"
            alt="Formas de Pagamento"
            class="payment-methods">
@@ -478,22 +457,13 @@ font-size: .9rem; color: var(--text-dark);
 
   <section id="faq" class="container">
     <h2 class="section-title">Perguntas Frequentes</h2>
-    <div class="faq-item">
-      <div class="faq-question">O curso é indicado para iniciantes?</div>
-      <div class="faq-answer"><p>Sim, programas do básico ao avançado.</p></div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-question">Preciso de equipamentos?</div>
-      <div class="faq-answer"><p>Não, só peso corporal.</p></div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-question">Como recebo o acesso?</div>
-      <div class="faq-answer"><p>Após compra, envio login por e‑mail.</p></div>
-    </div>
+    <div class="faq-item"><div class="faq-question">O curso é indicado para iniciantes?</div><div class="faq-answer"><p>Sim, do básico ao avançado.</p></div></div>
+    <div class="faq-item"><div class="faq-question">Preciso de equipamentos?</div><div class="faq-answer"><p>Não, só peso corporal.</p></div></div>
+    <div class="faq-item"><div class="faq-question">Como recebo o acesso?</div><div class="faq-answer"><p>Após compra, envio login por e‑mail.</p></div></div>
   </section>
 
   <section class="container guarantee">
-    <img src="https://guiadacalistenia.shop/images/risco-zero-oab-1.png" alt="Garantia Incondicional">
+    <img src="https://guiadacalistenia.shop/images/risco-zero-oab-1.png" alt="Garantia">
     <h2>Garantia Incondicional de 7 Dias</h2>
     <p>Se não for o que prometemos, devolvemos seu dinheiro.</p>
     <p>Acesso vitalício e atualizações constantes.</p>
@@ -509,7 +479,7 @@ font-size: .9rem; color: var(--text-dark);
       setTimeout(() => link.classList.add('nav-visible'), 200 + i * 100)
     );
 
-    // scroll-reveal
+    // reveal on scroll
     const observer = new IntersectionObserver((entries, obs) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -539,7 +509,6 @@ font-size: .9rem; color: var(--text-dark);
     window.onload = () => {
       startCountdown(2 * 24 * 60 * 60, document.getElementById('countdown'));
 
-      // show header-btn
       const btn = document.getElementById('btn-aproveitar');
       window.addEventListener('scroll', () => {
         const off = document.getElementById('offer').getBoundingClientRect();
@@ -552,3 +521,4 @@ font-size: .9rem; color: var(--text-dark);
   </script>
 </body>
 </html>
+```
