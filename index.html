@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transforme Seu Corpo com Calistenia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    :root {
+      --dark-bg: #000;
+      --section-bg: #1a1a1a;
+      --accent: #e63946;
+      --text-light: #f5f5f5;
+      --text-dark: #ccc;
+      --star: #ffcc00;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family:'Montserrat',sans-serif;
+      color: var(--text-light);
+      background: var(--dark-bg);
+      overflow-x: hidden;
+    }
+
+    /* nav */
+    .nav {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      background: var(--dark-bg);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      z-index: 1000;
+    }
+    .nav .logo {
+      color: var(--accent);
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    .nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+    .nav ul li a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-weight: 600;
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: color .3s, opacity .5s ease, transform .5s ease;
+    }
+    .nav ul li a.nav-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .nav ul li a:hover {
+      color: var(--accent);
+    }
+
+    /* header */
+    header {
+      margin-top: 4rem;
+      background:
+        linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),
+        url('https://guiadacalistenia.shop/images/8af611b165bbce80c0f101e37af99888.jpg') center/cover no-repeat;
+      height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      text-align: center;
+    }
+    .hero-content {
+      max-width: 800px;
+      padding: 0 20px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .8s ease-out, transform .8s ease-out;
+    }
+    .hero-content.visible {
+      opacity: 1;
+      transform: none;
+    }
+    .hero-content h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: var(--text-light);
+    }
+    .hero-content p {
+      font-size: 1.3rem;
+      margin-bottom: 1.5rem;
+      color: var(--text-light);
+    }
+    .hero-content a.btn-cta {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--text-light);
+      padding: 1rem 2.5rem;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      animation: pulse 1.5s infinite;
+      transition: transform .3s;
+      text-decoration: none;
+    }
+    .hero-content a.btn-cta:hover {
+      transform: scale(1.05);
+    }
+    .btn-cta:active {
+      transform: scale(0.9);
+      transition: transform .1s ease;
+    }
+    .timer {
+      margin-top: 1rem;
+      font-size: 2rem;
+      color: var(--accent);
+      font-weight: 700;
+      animation: pulse 1s infinite;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(230,57,70,0.7); }
+      50% { box-shadow: 0 0 0 20px rgba(230,57,70,0); }
+      100% { box-shadow: 0 0 0 0 rgba(230,57,70,0); }
+    }
+
+    /* botão aproveitar oferta */
+    .header-btn {
+      position: fixed;
+      bottom: 2rem; right: 2rem;
+      background: var(--accent);
+      color: var(--text-light);
+      padding: .8rem 1.5rem;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .5s ease, visibility .5s ease;
+      z-index: 1001;
+    }
+    .header-btn.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* scroll‑reveal sections */
+    section {
+      padding: 4rem 2rem;
+      background: var(--section-bg);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .8s ease-out, transform .8s ease-out;
+    }
+    section.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* Antes e Depois */
+    .before-after img {
+      width: 100%;
+      max-width: 800px;
+      display: block;
+      margin: 1rem auto;
+      border-radius: 12px;
+    }
+
+    /* Conteúdo do Curso */
+    .course-content img {
+      width: 100%;
+      max-width: 800px;
+      display: block;
+      margin: 1rem auto;
+      border-radius: 12px;
+    }
+
+    /* features e cards */
+    .container { max-width: 1100px; margin: auto; }
+    .section-title {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2.4rem;
+      color: var(--text-light);
+      position: relative;
+    }
+    .section-title::after {
+      content: '';
+      width: 80px;
+      height: 4px;
+      background: var(--accent);
+      display: block;
+      margin: 8px auto 0;
+    }
+    .features {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    }
+    .feature-item {
+      background: var(--dark-bg);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+      transition: transform .3s, box-shadow .3s;
+    }
+    .feature-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.7);
+    }
+
+    /* aprendizado e bônus */
+    .learning ul, .bonuses ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .learning li, .bonuses li {
+      margin-bottom: 1rem;
+      padding-left: 1.5rem;
+      position: relative;
+      color: var(--text-dark);
+      will-change: transform, opacity;
+    }
+    .learning li::before, .bonuses li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 1.2rem;
+    }
+
+    /* reviews */
+    .reviews { background: var(--dark-bg); }
+    .review-slider {
+      display: flex;
+      overflow-x: auto;
+      gap: 1.5rem;
+      scroll-snap-type: x mandatory;
+      padding-bottom: 1rem;
+      scroll-behavior: smooth;
+    }
+    .review-item {
+      scroll-snap-align: start;
+      min-width: 320px;
+      background: var(--section-bg);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+      position: relative;
+      transition: transform .3s, box-shadow .3s;
+    }
+    .review-item:hover {
+      transform: scale(1.02);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.7);
+    }
+    .review-item::before {
+      content: '“';
+      font-size: 4rem;
+      color: var(--accent);
+      position: absolute;
+      top: -10px; left: 20px;
+    }
+    .review-item h4 {
+      color: var(--accent);
+      margin-bottom: .5rem;
+    }
+    .review-item p {
+      font-style: italic;
+      color: var(--text-light);
+      line-height: 1.4;
+    }
+    .stars {
+      display: flex;
+      gap: 4px;
+      margin-top: .5rem;
+    }
+    .stars span { color: var(--star); }
+
+    /* oferta vibrante */
+    .offer-box {
+      background: linear-gradient(135deg, #e63946, #ff4e50);
+      padding: 3.5rem 2rem;
+      border-radius: 24px;
+      text-align: center;
+      color: var(--text-light);
+      box-shadow: 0 12px 40px rgba(230,57,70,0.6);
+      margin: 3rem 0;
+      position: relative;
+      overflow: hidden;
+      will-change: transform, opacity;
+    }
+    .offer-box::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: radial-gradient(circle at center, rgba(255,255,255,0.1), transparent 70%);
+      pointer-events: none;
+    }
+    .offer-box .old-price {
+      text-decoration: line-through;
+      font-size: 1.4rem;
+      opacity: .6;
+    }
+    .offer-box .new-price {
+      font-size: 4rem;
+      font-weight: 700;
+      margin: .5rem 0;
+    }
+    .offer-box small {
+      display: block;
+      margin-top: .5rem;
+      color: var(--text-light);
+    }
+    .offer-box .payment-methods {
+      display: block;
+      margin: 1.5rem auto 0;
+      max-width: 300px;
+      opacity: .9;
+    }
+    @keyframes softPulse {
+      0%,100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255,255,255,0.4); }
+      50%      { transform: scale(1.03); box-shadow: 0 0 20px rgba(255,255,255,0.2); }
+    }
+    .offer-box .btn-cta {
+      animation: softPulse 2s ease-in-out infinite;
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 1.2rem 3rem;
+      font-size: 1.4rem;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      background: var(--text-light);
+      color: var(--accent);
+      text-decoration: none;
+      transition: background .3s, color .3s;
+    }
+    .offer-box .btn-cta:hover {
+      background: transparent;
+      color: var(--text-light);
+      border: 2px solid var(--text-light);
+    }
+
+    /* FAQ */
+    .faq-item {
+      background: var(--dark-bg);
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      overflow: hidden;
+    }
+    .faq-question {
+      padding: 1rem 1.5rem;
+      cursor: pointer;
+      position: relative;
+      color: var(--text-light);
+    }
+    .faq-question::after {
+      content: '+';
+      position: absolute;
+      right: 1.5rem;
+      font-size: 1.5rem;
+      color: var(--accent);
+      transition: transform .3s;
+    }
+    .faq-answer {
+      max-height: 0;
+      padding: 0 1.5rem;
+      background: var(--section-bg);
+      color: var(--text-light);
+      opacity: 0;
+      transition: max-height .5s ease, opacity .5s ease, padding .5s ease;
+    }
+    .faq-item.active .faq-answer {
+      max-height: 200px;
+      opacity: 1;
+      padding: 1rem 1.5rem;
+    }
+    .faq-item.active .faq-question::after {
+      transform: rotate(45deg);
+    }
+
+    /* garantia */
+    .guarantee {
+      background: var(--section-bg);
+      text-align: center;
+      border-radius: 10px;
+      padding: 2rem;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+    .guarantee img {
+      max-width: 200px;
+    }
+    .guarantee h2 {
+      color: var(--accent);
+      margin-bottom: .5rem;
+    }
+    .guarantee p {
+      color: var(--text-light);
+      margin: .5rem 0;
+    }
+
+    /* footer */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: .9rem;
+      color: var(--text-dark);
+      background: var(--dark-bg);
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="logo">Calistenia na Prática</div>
+    <ul>
+      <li><a href="#features">Incluído</a></li>
+      <li><a href="#reviews">Depoimentos</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#offer">Oferta</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <div class="hero-content">
+      <h1>Transforme Seu Corpo com +500 Movimentos de Calistenia</h1>
+      <p>Treine em casa, na rua ou onde quiser — sem academia ou equipamento!</p>
+      <a href="#offer" class="btn-cta">SIM, QUERO COMEÇAR AGORA!</a>
+      <div id="timer" class="timer">
+        Oferta termina em: <span id="countdown">00:00:00</span>
+      </div>
+    </div>
+    <button id="btn-aproveitar" class="header-btn">APROVEITAR OFERTA</button>
+  </header>
+
+  <section class="before-after container">
+    <h2 class="section-title">Antes e Depois</h2>
+    <img src="https://guiadacalistenia.shop/images/Captura-de-tela-2025-07-13-230817-1024x811.png" alt="Antes e Depois">
+  </section>
+
+  <section class="course-content container">
+    <h2 class="section-title">Conteúdo do Curso</h2>
+    <img src="https://guiadacalistenia.shop/images/site.png" alt="Conteúdo do Curso">
+  </section>
+
+  <section id="features">
+    <div class="container">
+      <h2 class="section-title">O Que Está Incluído</h2>
+      <div class="features">
+        <div class="feature-item">
+          <h3>Acesso Imediato</h3>
+          <p>Desafio +500 Movimentos para queima de gordura.</p>
+        </div>
+        <div class="feature-item">
+          <h3>Gifs Interativos</h3>
+          <p>Execução perfeita com animações passo a passo.</p>
+        </div>
+        <div class="feature-item">
+          <h3>Treinos Dinâmicos</h3>
+          <p>Planejamento inteligente para evolução constante.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="learning container">
+    <h2 class="section-title">Você Vai Aprender</h2>
+    <ul class="learning">
+      <li>Barra Explosiva</li>
+      <li>Front Lever & Bandeira Humana</li>
+      <li>Push-Up Avançado</li>
+      <li>Pull-Up Perfeito</li>
+      <li>Mobilidade & Flexibilidade</li>
+      <li>Controle Corporal Total</li>
+    </ul>
+  </section>
+
+  <section class="bonuses container">
+    <h2 class="section-title">Bônus Exclusivos</h2>
+    <ul class="bonuses">
+      <li>21 dias de treinos extremados</li>
+      <li>Fórmula da Planche</li>
+      <li>Queima Extrema 24h</li>
+      <li>Rituais de Atletas de Elite</li>
+    </ul>
+  </section>
+
+  <section id="reviews" class="reviews container">
+    <h2 class="section-title">O Que Nossos Alunos Dizem</h2>
+    <div class="review-slider">
+      <div class="review-item">
+        <h4>João Silva</h4>
+        <div class="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p>Em apenas 2 semanas, minha força explodiu e meu abdômen nunca esteve tão definido.</p>
+      </div>
+      <div class="review-item">
+        <h4>Mariana Costa</h4>
+        <div class="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p>Hoje faço front lever com controle total. Nunca imaginei evoluir tão rápido!</p>
+      </div>
+      <div class="review-item">
+        <h4>Lucas Pereira</h4>
+        <div class="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p>Os vídeos e GIFs são impecáveis. Tornei-me uma máquina de calistenia!</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="offer" class="container">
+    <div class="offer-box">
+      <div class="old-price">De R$ 159,90</div>
+      <div class="new-price">Por R$ 19,90</div>
+      <small>ou 4x de R$ 10,60 sem juros</small>
+      <a href="#checkout" class="btn-cta">SIM, QUERO COMEÇAR AGORA!</a>
+      <img
+        src="https://d2r9epyceweg5n.cloudfront.net/stores/001/860/687/rte/NO%20CART%C3%83O%20(1).png"
+        alt="Formas de Pagamento"
+        class="payment-methods"
+      >
+    </div>
+  </section>
+
+  <section id="faq" class="container">
+    <h2 class="section-title">Perguntas Frequentes</h2>
+    <div class="faq-item">
+      <div class="faq-question">O curso é indicado para iniciantes?</div>
+      <div class="faq-answer"><p>Sim, você recebe programas progressivos do básico ao avançado.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Preciso de equipamentos?</div>
+      <div class="faq-answer"><p>Não, todos os exercícios usam somente o peso do corpo.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Como recebo o acesso?</div>
+      <div class="faq-answer"><p>Após a compra, você recebe um e-mail com login e informações.</p></div>
+    </div>
+  </section>
+
+  <section class="container guarantee">
+    <img src="https://guiadacalistenia.shop/images/risco-zero-oab-1.png" alt="Garantia Incondicional">
+    <h2>Garantia Incondicional de 7 Dias</h2>
+    <p>Se não for o que prometemos, devolvemos seu dinheiro sem perguntas.</p>
+    <p>Acesso vitalício e atualizações constantes.</p>
+  </section>
+
+  <footer>
+    <p>Todos os Direitos Reservados &copy; 2025</p>
+  </footer>
+
+  <script>
+    function startCountdown(duration, display) {
+      let timer = duration, h, m, s;
+      setInterval(() => {
+        h = Math.floor(timer / 3600);
+        m = Math.floor((timer % 3600) / 60);
+        s = timer % 60;
+        display.textContent =
+          (h<10?'0'+h:h) + ':' +
+          (m<10?'0'+m:m) + ':' +
+          (s<10?'0'+s:s);
+        if (--timer < 0) timer = 0;
+      }, 1000);
+    }
+
+    window.onload = () => {
+      startCountdown(2*24*60*60, document.getElementById('countdown'));
+
+      // menu fade-in
+      document.querySelectorAll('.nav ul li a').forEach((link, i) => {
+        setTimeout(() => link.classList.add('nav-visible'), 200 + i*100);
+      });
+
+      // scroll-reveal
+      const obs = new IntersectionObserver((entries, o) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            o.unobserve(e.target);
+          }
+        });
+      }, { threshold: .1 });
+      obs.observe(document.querySelector('.hero-content'));
+      document.querySelectorAll('section').forEach(s => obs.observe(s));
+
+      // FAQ toggle
+      document.querySelectorAll('.faq-question').forEach(q => {
+        q.addEventListener('click', () => q.parentElement.classList.toggle('active'));
+      });
+
+      // botão aproveitar
+      const btn = document.getElementById('btn-aproveitar');
+      window.addEventListener('scroll', () => {
+        const off = document.getElementById('offer').getBoundingClientRect();
+        if (off.top<=window.innerHeight && off.bottom>=0) btn.classList.remove('show');
+        else btn.classList.add('show');
+      });
+      btn.addEventListener('click', () => {
+        document.getElementById('offer').scrollIntoView({ behavior:'smooth' });
+      });
+    };
+  </script>
+</body>
+</html>
