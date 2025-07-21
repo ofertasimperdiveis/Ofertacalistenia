@@ -43,6 +43,7 @@
       background: var(--dark-bg);
       overflow-x: hidden;
     }
+
     /* NAV */
     .nav {
       position: fixed; top:0; left:0;
@@ -115,6 +116,7 @@
       padding:4rem 2rem; background: var(--section-bg);
       opacity:0; transform:translateY(20px);
       transition:opacity .8s ease-out, transform .8s ease-out;
+      margin:0;
     }
     section.visible { opacity:1; transform:none; }
 
@@ -281,25 +283,19 @@
       .nav ul li a { font-size:0.8rem; padding:0.3rem; }
 
       .container {
-        max-width:100%;
-        padding:0 1rem;
+        max-width:100%; padding:0 1rem;
       }
 
       section {
-        padding:2rem 1rem;
+        padding:2rem 1rem; margin:0;
       }
 
-      /* Vídeo: largura igual aos blocos, altura aumentada proporcionalmente */
+      /* Vídeo: largura igual aos blocos, altura maior */
       .video-box {
-        width:100%;
-        max-width:100%;
-        margin:2rem 0;
-        padding:0.5rem;
+        width:100%; max-width:100%; margin:2rem 0; padding:0.5rem;
       }
       .video-box iframe {
-        width:100%;
-        height: 300px; /* maior altura */
-        max-width:none;
+        width:100%; height: 320px; max-width:none;
       }
 
       .offer-box .btn-cta {
@@ -335,8 +331,7 @@
 
   <section class="video-box">
     <h2 class="section-title">
-      ▶️ Assista ao vídeo e entenda por que +10k de alunos escolheram a gente
-      para conquistar resultados rápidos e elevar seu bem‑estar! 🌟💪
+      ▶️ Assista ao vídeo e entenda por que +10k de alunos escolheram a gente para conquistar resultados rápidos e elevar seu bem‑estar! 🌟💪
     </h2>
     <iframe title="vimeo-player"
             src="https://player.vimeo.com/video/1102847107?h=e0cb9a7e65&autoplay=1"
@@ -358,18 +353,9 @@
   <section id="features" class="container">
     <h2 class="section-title">O Que Está Incluído</h2>
     <div class="features">
-      <div class="feature-item">
-        <h3>Acesso Imediato</h3>
-        <p>Desafio +500 Movimentos para queima de gordura.</p>
-      </div>
-      <div class="feature-item">
-        <h3>Gifs Interativos</h3>
-        <p>Execução perfeita com animações passo a passo.</p>
-      </div>
-      <div class="feature-item">
-        <h3>Treinos Dinâmicos</h3>
-        <p>Planejamento inteligente para evolução constante.</p>
-      </div>
+      <div class="feature-item"><h3>Acesso Imediato</h3><p>Desafio +500 Movimentos para queima de gordura.</p></div>
+      <div class="feature-item"><h3>Gifs Interativos</h3><p>Execução perfeita com animações passo a passo.</p></div>
+      <div class="feature-item"><h3>Treinos Dinâmicos</h3><p>Planejamento inteligente para evolução constante.</p></div>
     </div>
   </section>
 
@@ -398,21 +384,9 @@
   <section id="reviews" class="reviews container">
     <h2 class="section-title">O Que Nossos Alunos Dizem</h2>
     <div class="review-slider">
-      <div class="review-item">
-        <h4>João Silva</h4>
-        <div class="stars">★★★★★</div>
-        <p>Em apenas 2 semanas, minha força explodiu...</p>
-      </div>
-      <div class="review-item">
-        <h4>Mariana Costa</h4>
-        <div class="stars">★★★★★</div>
-        <p>Hoje faço front lever com controle total...</p>
-      </div>
-      <div class="review-item">
-        <h4>Lucas Pereira</h4>
-        <div class="stars">★★★★★</div>
-        <p>Os vídeos e GIFs são impecáveis...</p>
-      </div>
+      <div class="review-item"><h4>João Silva</h4><div class="stars">★★★★★</div><p>Em apenas 2 semanas, minha força explodiu...</p></div>
+      <div class="review-item"><h4>Mariana Costa</h4><div class="stars">★★★★★</div><p>Hoje faço front lever com controle total...</p></div>
+      <div class="review-item"><h4>Lucas Pereira</h4><div class="stars">★★★★★</div><p>Os vídeos e GIFs são impecáveis...</p></div>
     </div>
   </section>
 
@@ -428,18 +402,9 @@
 
   <section id="faq" class="container">
     <h2 class="section-title">Perguntas Frequentes</h2>
-    <div class="faq-item">
-      <div class="faq-question">O curso é indicado para iniciantes?</div>
-      <div class="faq-answer"><p>Sim, do básico ao avançado.</p></div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-question">Preciso de equipamentos?</div>
-      <div class="faq-answer"><p>Não, só peso corporal.</p></div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-question">Como recebo o acesso?</div>
-      <div class="faq-answer"><p>Após compra, envio login por e‑mail.</p></div>
-    </div>
+    <div class="faq-item"><div class="faq-question">O curso é indicado para iniciantes?</div><div class="faq-answer"><p>Sim, do básico ao avançado.</p></div></div>
+    <div class="faq-item"><div class="faq-question">Preciso de equipamentos?</div><div class="faq-answer"><p>Não, só peso corporal.</p></div></div>
+    <div class="faq-item"><div class="faq-question">Como recebo o acesso?</div><div class="faq-answer"><p>Após compra, envio login por e‑mail.</p></div></div>
   </section>
 
   <section class="container guarantee">
