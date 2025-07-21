@@ -2,38 +2,35 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Transforme Seu Corpo com Calistenia</title>
-  <script
-  src="https://cdn.utmify.com.br/scripts/utms/latest.js"
-  data-utmify-prevent-xcod-sck
-  data-utmify-prevent-subids
-  async
-  defer
-></script>
- <!-- Meta Pixel Code -->
-<script>
-  window.pixelId = "687e519bb27a6a92659b0363";
-  var a = document.createElement("script");
-  a.setAttribute("async", "");
-  a.setAttribute("defer", "");
-  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
-  document.head.appendChild(a);
-</script>
-<!-- End Meta Pixel Code -->
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '620899104387300');
+    fbq('track', 'PageView');
+  </script>
   <noscript>
     <img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=620899104387300&ev=PageView&noscript=1" />
+      src="https://www.facebook.com/tr?id=620899104387300&ev=PageView&noscript=1"/>
   </noscript>
   <!-- End Meta Pixel Code -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet"/>
   <style>
     html { scroll-behavior: smooth; }
     :root {
       --dark-bg: #000;
       --section-bg: #1a1a1a;
       --accent: #e63946;
+      --accent2: #ff4e50;
       --text-light: #f5f5f5;
       --text-dark: #ccc;
       --star: #ffcc00;
@@ -47,37 +44,25 @@
     }
     /* nav */
     .nav {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%;
-      background: var(--dark-bg);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      z-index: 1000;
+      position: fixed; top: 0; left: 0; width: 100%;
+      background: var(--dark-bg); display: flex;
+      justify-content: space-between; align-items: center;
+      padding: 1rem 2rem; z-index: 1000;
     }
     .nav .logo {
-      color: var(--accent);
-      font-size: 1.5rem;
-      font-weight: 700;
+      color: var(--accent); font-size: 1.5rem; font-weight: 700;
     }
     .nav ul {
-      list-style: none;
-      display: flex;
-      gap: 2rem;
+      list-style: none; display: flex; gap: 2rem;
     }
     .nav ul li a {
-      color: var(--text-light);
-      text-decoration: none;
-      font-weight: 600;
-      opacity: 0;
+      color: var(--text-light); text-decoration: none;
+      font-weight: 600; opacity: 0;
       transform: translateY(-10px);
       transition: color .3s, opacity .5s ease, transform .5s ease;
     }
     .nav ul li a.nav-visible {
-      opacity: 1;
-      transform: translateY(0);
+      opacity: 1; transform: translateY(0);
     }
     .nav ul li a:hover {
       color: var(--accent);
@@ -87,55 +72,40 @@
       margin-top: 4rem;
       background:
         linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),
-        url('https://guiadacalistenia.shop/images/8af611b165bbce80c0f101e37af99888.jpg') center/cover no-repeat;
-      height: 90vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+        url('https://guiadacalistenia.shop/images/8af611b165bbce80c0f101e37af99888.jpg')
+        center/cover no-repeat;
+      height: 90vh; display: flex;
+      align-items: center; justify-content: center;
       text-align: center;
     }
     .hero-content {
-      max-width: 800px;
-      padding: 0 20px;
-      opacity: 0;
-      transform: translateY(20px);
+      max-width: 800px; padding: 0 20px;
+      opacity: 0; transform: translateY(20px);
       transition: opacity .8s ease-out, transform .8s ease-out;
     }
     .hero-content.visible {
-      opacity: 1;
-      transform: none;
+      opacity: 1; transform: none;
     }
     .hero-content h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
+      font-size: 3rem; margin-bottom: 1rem;
       color: var(--text-light);
     }
     .hero-content p {
-      font-size: 1.3rem;
-      margin-bottom: 1.5rem;
+      font-size: 1.3rem; margin-bottom: 1.5rem;
       color: var(--text-light);
     }
     .hero-content a.btn-cta {
-      display: inline-block;
-      background: var(--accent);
-      color: var(--text-light);
-      padding: 1rem 2.5rem;
-      font-size: 1.2rem;
-      border: none;
-      border-radius: 50px;
-      cursor: pointer;
+      display: inline-block; background: var(--accent);
+      color: var(--text-light); padding: 1rem 2.5rem;
+      font-size: 1.2rem; border: none;
+      border-radius: 50px; cursor: pointer;
       animation: pulse 1.5s infinite;
-      transition: transform .3s;
-      text-decoration: none;
+      transition: transform .3s; text-decoration: none;
     }
-    .hero-content a.btn-cta:hover {
-      transform: scale(1.05);
-    }
+    .hero-content a.btn-cta:hover { transform: scale(1.05); }
     .timer {
-      margin-top: 1rem;
-      font-size: 2rem;
-      color: var(--accent);
-      font-weight: 700;
+      margin-top: 1rem; font-size: 2rem;
+      color: var(--accent); font-weight: 700;
       animation: pulse 1s infinite;
     }
     @keyframes pulse {
@@ -143,70 +113,70 @@
       50% { box-shadow: 0 0 0 20px rgba(230,57,70,0); }
       100% { box-shadow: 0 0 0 0 rgba(230,57,70,0); }
     }
-    /* botão flutuante */
+    /* floating button */
     .header-btn {
-      position: fixed;
-      bottom: 2rem; right: 2rem;
-      background: var(--accent);
-      color: var(--text-light);
-      padding: .8rem 1.5rem;
-      border: none;
-      border-radius: 50px;
-      cursor: pointer;
-      opacity: 0;
-      visibility: hidden;
+      position: fixed; bottom: 2rem; right: 2rem;
+      background: var(--accent); color: var(--text-light);
+      padding: .8rem 1.5rem; border: none;
+      border-radius: 50px; cursor: pointer;
+      opacity: 0; visibility: hidden;
       transition: opacity .5s ease, visibility .5s ease;
       z-index: 1001;
     }
-    .header-btn.show {
-      opacity: 1;
-      visibility: visible;
-    }
-    /* scroll-reveal */
+    .header-btn.show { opacity: 1; visibility: visible; }
+    /* scroll‑reveal */
     section {
-      padding: 4rem 2rem;
-      background: var(--section-bg);
-      opacity: 0;
-      transform: translateY(20px);
+      padding: 4rem 2rem; background: var(--section-bg);
+      opacity: 0; transform: translateY(20px);
       transition: opacity .8s ease-out, transform .8s ease-out;
     }
-    section.visible {
-      opacity: 1;
-      transform: none;
+    section.visible { opacity: 1; transform: none; }
+    /* video with gradient box */
+    .video { background: var(--section-bg); }
+    .video-container {
+      max-width: 1100px; margin: auto;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      padding: 2rem; border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+      text-align: center;
     }
-    /* imagens */
+    .video-container h2 {
+      color: var(--text-light); font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .video-wrapper {
+      position: relative; padding-bottom: 56.25%;
+      height: 0; overflow: hidden; border-radius: 12px;
+    }
+    .video-wrapper iframe {
+      position: absolute; top: 0; left: 0;
+      width: 100%; height: 100%; border: 0;
+    }
+    /* before & after */
     .before-after img,
     .course-content img {
-      width: 100%;
-      max-width: 800px;
-      display: block;
-      margin: 1rem auto;
+      width: 100%; max-width: 800px;
+      display: block; margin: 1rem auto;
       border-radius: 12px;
     }
     /* features */
     .container { max-width: 1100px; margin: auto; }
     .section-title {
-      text-align: center;
-      margin-bottom: 2rem;
-      font-size: 2.4rem;
-      color: var(--text-light);
+      text-align: center; margin-bottom: 2rem;
+      font-size: 2.4rem; color: var(--text-light);
       position: relative;
     }
     .section-title::after {
-      content: '';
-      width: 80px; height: 4px;
+      content: ''; width: 80px; height: 4px;
       background: var(--accent);
-      display: block;
-      margin: 8px auto 0;
+      display: block; margin: 8px auto 0;
     }
     .features {
-      display: grid;
-      gap: 2rem;
+      display: grid; gap: 2rem;
       grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
     }
     .feature-item {
-      background: var(--dark-bg);
-      padding: 2rem;
+      background: var(--dark-bg); padding: 2rem;
       border-radius: 12px;
       box-shadow: 0 6px 20px rgba(0,0,0,0.5);
       transition: transform .3s, box-shadow .3s;
@@ -215,38 +185,51 @@
       transform: translateY(-8px);
       box-shadow: 0 8px 24px rgba(0,0,0,0.7);
     }
-    /* aprendizado e bônus */
+    /* learning & bonuses */
     .learning ul, .bonuses ul { list-style: none; padding-left: 0; }
     .learning li, .bonuses li {
-      margin-bottom: 1rem; padding-left: 1.5rem; position: relative; color: var(--text-dark);
+      margin-bottom: 1rem; padding-left: 1.5rem;
+      position: relative; color: var(--text-dark);
     }
     .learning li::before, .bonuses li::before {
-      content: '•'; position: absolute; left: 0; color: var(--accent); font-size: 1.2rem;
+      content: '•'; position: absolute; left: 0;
+      color: var(--accent); font-size: 1.2rem;
     }
     /* reviews */
     .reviews { background: var(--dark-bg); }
     .review-slider {
-      display: flex; overflow-x: auto; gap: 1.5rem; padding-bottom: 1rem; scroll-behavior: smooth;
+      display: flex; overflow-x: auto; gap: 1.5rem;
+      padding-bottom: 1rem; scroll-behavior: smooth;
     }
     .review-item {
-      min-width: 320px; background: var(--section-bg); padding: 2rem; border-radius: 12px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.6); position: relative; transition: transform .3s, box-shadow .3s;
+      min-width: 320px; background: var(--section-bg);
+      padding: 2rem; border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+      position: relative; transition: transform .3s, box-shadow .3s;
     }
     .review-item:hover {
-      transform: scale(1.02); box-shadow: 0 8px 24px rgba(0,0,0,0.7);
+      transform: scale(1.02);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.7);
     }
     .review-item::before {
-      content: '“'; font-size: 4rem; color: var(--accent); position: absolute; top: -10px; left: 20px;
+      content: '“'; font-size: 4rem; color: var(--accent);
+      position: absolute; top: -10px; left: 20px;
     }
-    .review-item h4 { color: var(--accent); margin-bottom: .5rem; }
-    .review-item p { font-style: italic; color: var(--text-light); line-height: 1.4; }
+    .review-item h4 {
+      color: var(--accent); margin-bottom: .5rem;
+    }
+    .review-item p {
+      font-style: italic; color: var(--text-light);
+      line-height: 1.4;
+    }
     .stars { display: flex; gap: 4px; margin-top: .5rem; }
     .stars span { color: var(--star); }
-    /* oferta */
+    /* offer box */
     .offer-box {
-      background: linear-gradient(135deg, #e63946, #ff4e50);
-      padding: 3.5rem 2rem; border-radius: 24px; text-align: center;
-      color: var(--text-light); box-shadow: 0 12px 40px rgba(230,57,70,0.6);
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      padding: 3.5rem 2rem; border-radius: 24px;
+      text-align: center; color: var(--text-light);
+      box-shadow: 0 12px 40px rgba(230,57,70,0.6);
       margin: 3rem 0; position: relative; overflow: hidden;
     }
     .offer-box::before {
@@ -264,16 +247,14 @@
       display: block; margin-top: .5rem; color: var(--text-light);
     }
     .offer-box .payment-methods {
-      display: block; margin: 1.5rem auto 0; max-width: 300px; opacity: .9;
-    }
-    @keyframes softPulse {
-      0%,100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255,255,255,0.4); }
-      50%      { transform: scale(1.03); box-shadow: 0 0 20px rgba(255,255,255,0.2); }
+      display: block; margin: 1.5rem auto 0;
+      max-width: 300px; opacity: .9;
     }
     .offer-box .btn-cta {
       animation: softPulse 2s ease-in-out infinite;
-      display: inline-block; margin-top: 1.5rem; padding: 1.2rem 3rem;
-      font-size: 1.4rem; border: none; border-radius: 50px; cursor: pointer;
+      display: inline-block; margin-top: 1.5rem;
+      padding: 1.2rem 3rem; font-size: 1.4rem;
+      border: none; border-radius: 50px; cursor: pointer;
       background: var(--text-light); color: var(--accent);
       text-decoration: none; transition: background .3s, color .3s;
     }
@@ -281,29 +262,40 @@
       background: transparent; color: var(--text-light);
       border: 2px solid var(--text-light);
     }
+    @keyframes softPulse {
+      0%,100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255,255,255,0.4); }
+      50% { transform: scale(1.03); box-shadow: 0 0 20px rgba(255,255,255,0.2); }
+    }
     /* FAQ */
     .faq-item {
-      background: var(--dark-bg); border-radius: 8px; margin-bottom: 1rem; overflow: hidden;
+      background: var(--dark-bg); border-radius: 8px;
+      margin-bottom: 1rem; overflow: hidden;
     }
     .faq-question {
-      padding: 1rem 1.5rem; cursor: pointer; position: relative; color: var(--text-light);
+      padding: 1rem 1.5rem; cursor: pointer;
+      position: relative; color: var(--text-light);
     }
     .faq-question::after {
-      content: '+'; position: absolute; right: 1.5rem; font-size: 1.5rem; color: var(--accent);
+      content: '+'; position: absolute; right: 1.5rem;
+      font-size: 1.5rem; color: var(--accent);
       transition: transform .3s;
     }
-    .faq-item.active .faq-question::after { transform: rotate(45deg); }
+    .faq-item.active .faq-question::after {
+      transform: rotate(45deg);
+    }
     .faq-answer {
-      max-height: 0; padding: 0 1.5rem; background: var(--section-bg);
-      color: var(--text-light); opacity: 0; transition: max-height .5s ease, padding .5s ease;
+      max-height: 0; padding: 0 1.5rem;
+      background: var(--section-bg); color: var(--text-light);
+      opacity: 0; transition: max-height .5s ease, padding .5s ease;
     }
     .faq-item.active .faq-answer {
       max-height: 200px; opacity: 1; padding: 1rem 1.5rem;
     }
-    /* garantia */
+    /* guarantee */
     .guarantee {
-      background: var(--section-bg); text-align: center; border-radius: 10px;
-      padding: 2rem; box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+      background: var(--section-bg); text-align: center;
+      border-radius: 10px; padding: 2rem;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.5);
       display: flex; flex-direction: column; align-items: center; gap: 1rem;
     }
     .guarantee img { max-width: 200px; }
@@ -311,7 +303,8 @@
     .guarantee p { color: var(--text-light); margin: .5rem 0; }
     /* footer */
     footer {
-      text-align: center; padding: 2rem; font-size: .9rem; color: var(--text-dark);
+      text-align: center; padding: 2rem;
+      font-size: .9rem; color: var(--text-dark);
       background: var(--dark-bg);
     }
     /* mobile tweaks */
@@ -320,17 +313,12 @@
       .nav .logo { font-size: 1rem; }
       .nav ul { gap: 0.5rem; }
       .nav ul li a { font-size: 0.8rem; padding: 0.3rem; }
+      .video-container h2 { font-size: 1.5rem; }
       .offer-box .btn-cta {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        white-space: normal;
-        text-align: center;
-        padding: 1.65rem 2.2rem; /* +10% padding */
-        font-size: 0.95rem;     /* -5% font-size */
-        line-height: 1.2;
-        width: 99%;
-        margin: 1.5rem auto 0;
+        display: flex; align-items: center; justify-content: center;
+        white-space: normal; text-align: center;
+        padding: 1.65rem 2.2rem; font-size: 0.95rem;
+        line-height: 1.2; width: 99%; margin: 1.5rem auto 0;
         box-sizing: border-box;
       }
     }
@@ -352,23 +340,39 @@
       <h1>Transforme Seu Corpo com +500 Movimentos de Calistenia</h1>
       <p>Treine em casa, na rua ou onde quiser — sem academia ou equipamento!</p>
       <a href="#offer" class="btn-cta">SIM, QUERO COMEÇAR AGORA!</a>
-      <div id="timer" class="timer">
-        Oferta termina em: <span id="countdown">00:00:00</span>
-      </div>
+      <div id="timer" class="timer">Oferta termina em: <span id="countdown">00:00:00</span></div>
     </div>
     <button id="btn-aproveitar" class="header-btn">APROVEITAR OFERTA</button>
   </header>
 
+  <!-- vídeo com chamamento -->
+  <section class="video">
+    <div class="video-container">
+      <h2>Descubra por que mais de 10.000 alunos escolheram nosso curso de calistenia!</h2>
+      <div class="video-wrapper">
+        <iframe title="vimeo-player"
+                src="https://player.vimeo.com/video/1102847107?h=e0cb9a7e65"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Antes e Depois -->
   <section class="before-after container">
     <h2 class="section-title">Antes e Depois</h2>
     <img src="https://guiadacalistenia.shop/images/Captura-de-tela-2025-07-13-230817-1024x811.png" alt="Antes e Depois">
   </section>
 
+  <!-- Conteúdo do Curso -->
   <section class="course-content container">
     <h2 class="section-title">Conteúdo do Curso</h2>
     <img src="https://guiadacalistenia.shop/images/site.png" alt="Conteúdo do Curso">
   </section>
 
+  <!-- Features -->
   <section id="features" class="container">
     <h2 class="section-title">O Que Está Incluído</h2>
     <div class="features">
@@ -378,6 +382,7 @@
     </div>
   </section>
 
+  <!-- Aprendizado -->
   <section class="learning container">
     <h2 class="section-title">Você Vai Aprender</h2>
     <ul class="learning">
@@ -390,36 +395,40 @@
     </ul>
   </section>
 
+  <!-- Bônus -->
   <section class="bonuses container">
     <h2 class="section-title">Bônus Exclusivos</h2>
     <ul class="bonuses">
       <li>21 dias de treinos extremados</li>
       <li>Fórmula da Planche</li>
-      <li>Queima Extrema 24h</li>
+      <li>Queima Extrema 24h</li>
       <li>Rituais de Atletas de Elite</li>
     </ul>
   </section>
 
+  <!-- Depoimentos -->
   <section id="reviews" class="reviews container">
     <h2 class="section-title">O Que Nossos Alunos Dizem</h2>
     <div class="review-slider">
-      <div class="review-item"><h4>João Silva</h4><div class="stars">★★★★★</div><p>Em apenas 2 semanas, minha força explodiu...</p></div>
-      <div class="review-item"><h4>Mariana Costa</h4><div class="stars">★★★★★</div><p>Hoje faço front lever com controle total...</p></div>
-      <div class="review-item"><h4>Lucas Pereira</h4><div class="stars">★★★★★</div><p>Os vídeos e GIFs são impecáveis...</p></div>
+      <div class="review-item"><h4>João Silva</h4><div class="stars">★★★★★</div><p>Em apenas 2 semanas, minha força explodiu e meu abdômen nunca esteve tão definido.</p></div>
+      <div class="review-item"><h4>Mariana Costa</h4><div class="stars">★★★★★</div><p>Hoje faço front lever com controle total. Nunca imaginei evoluir tão rápido!</p></div>
+      <div class="review-item"><h4>Lucas Pereira</h4><div class="stars">★★★★★</div><p>Os vídeos e GIFs são impecáveis. Tornei-me uma máquina de calistenia!</p></div>
     </div>
   </section>
 
+  <!-- Oferta -->
   <section id="offer" class="container">
     <div class="offer-box">
-      <div class="old-price">De R$ 159,90</div>
-      <div class="new-price">Por R$ 19,90</div>
-      <small>ou 2x de R$ 10,47 sem juros</small>
+      <div class="old-price">De R$ 159,90</div>
+      <div class="new-price">Por R$ 19,90</div>
+      <small>ou 4x de R$ 10,60 sem juros</small>
       <a href="https://go.hotmart.com/X100935210N?ap=62d4" class="btn-cta">SIM, QUERO COMEÇAR AGORA!</a>
       <img src="https://d2r9epyceweg5n.cloudfront.net/stores/001/860/687/rte/NO%20CART%C3%83O%20(1).png"
-           alt="Formas de Pagamento" class="payment-methods">
+           alt="Formas de Pagamento" class="payment-methods"/>
     </div>
   </section>
 
+  <!-- FAQ -->
   <section id="faq" class="container">
     <h2 class="section-title">Perguntas Frequentes</h2>
     <div class="faq-item"><div class="faq-question">O curso é indicado para iniciantes?</div><div class="faq-answer"><p>Sim, do básico ao avançado.</p></div></div>
@@ -427,23 +436,24 @@
     <div class="faq-item"><div class="faq-question">Como recebo o acesso?</div><div class="faq-answer"><p>Após compra, envio login por e‑mail.</p></div></div>
   </section>
 
+  <!-- Garantia -->
   <section class="container guarantee">
-    <img src="https://guiadacalistenia.shop/images/risco-zero-oab-1.png" alt="Garantia">
+    <img src="https://guiadacalistenia.shop/images/risco-zero-oab-1.png" alt="Garantia"/>
     <h2>Garantia Incondicional de 7 Dias</h2>
-    <p>Se não for o que prometemos, devolvemos seu dinheiro.</p>
+    <p>Se não for o que prometemos, devolvemos seu dinheiro sem perguntas.</p>
     <p>Acesso vitalício e atualizações constantes.</p>
   </section>
 
+  <!-- Footer -->
   <footer>
     <p>Todos os Direitos Reservados © 2025</p>
   </footer>
 
   <script>
-    // fade-in nav
+    // fade-in nav links
     document.querySelectorAll('.nav ul li a').forEach((link, i) =>
       setTimeout(() => link.classList.add('nav-visible'), 200 + i * 100)
     );
-
     // reveal on scroll
     const observer = new IntersectionObserver((entries, obs) => {
       entries.forEach(entry => {
@@ -454,32 +464,30 @@
       });
     }, { threshold: 0.1 });
     document.querySelectorAll('section, .hero-content').forEach(el => observer.observe(el));
-
     // FAQ toggle
     document.querySelectorAll('.faq-question').forEach(q =>
       q.addEventListener('click', () => q.parentElement.classList.toggle('active'))
     );
-
     // countdown
     function startCountdown(duration, display) {
       let timer = duration;
       setInterval(() => {
-        const h = String(Math.floor(timer / 3600)).padStart(2, '0'),
-              m = String(Math.floor((timer % 3600) / 60)).padStart(2, '0'),
-              s = String(timer % 60).padStart(2, '0');
+        const h = String(Math.floor(timer/3600)).padStart(2,'0'),
+              m = String(Math.floor((timer%3600)/60)).padStart(2,'0'),
+              s = String(timer%60).padStart(2,'0');
         display.textContent = `${h}:${m}:${s}`;
-        if (timer > 0) timer--;
-      }, 1000);
+        if (timer>0) timer--;
+      },1000);
     }
     window.onload = () => {
-      startCountdown(2 * 24 * 60 * 60, document.getElementById('countdown'));
+      startCountdown(2*24*60*60, document.getElementById('countdown'));
       const btn = document.getElementById('btn-aproveitar');
       window.addEventListener('scroll', () => {
         const off = document.getElementById('offer').getBoundingClientRect();
         btn.classList.toggle('show', !(off.top <= window.innerHeight && off.bottom >= 0));
       });
       btn.addEventListener('click', () =>
-        document.getElementById('offer').scrollIntoView({ behavior: 'smooth' })
+        document.getElementById('offer').scrollIntoView({behavior:'smooth'})
       );
     };
   </script>
