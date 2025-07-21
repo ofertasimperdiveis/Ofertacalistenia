@@ -21,7 +21,6 @@
     a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
     document.head.appendChild(a);
   </script>
-  <!-- End Meta Pixel Code -->
   <noscript>
     <img height="1" width="1" style="display:none"
       src="https://www.facebook.com/tr?id=620899104387300&ev=PageView&noscript=1" />
@@ -44,265 +43,379 @@
       background: var(--dark-bg);
       overflow-x: hidden;
     }
-    /* nav */
+
+    /* NAV */
     .nav {
-      position: fixed; top: 0; left: 0;
-      width: 100%; background: var(--dark-bg);
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 1rem 2rem; z-index: 1000;
+      position: fixed;
+      top:0; left:0;
+      width:100%;
+      background: var(--dark-bg);
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:1rem 2rem;
+      z-index:1000;
     }
-    .nav .logo { color: var(--accent); font-size: 1.5rem; font-weight: 700; }
-    .nav ul { list-style: none; display: flex; gap: 2rem; }
+    .nav .logo { color: var(--accent); font-size:1.5rem; font-weight:700; }
+    .nav ul { list-style:none; display:flex; gap:2rem; }
     .nav ul li a {
-      color: var(--text-light); text-decoration: none; font-weight: 600;
-      opacity: 0; transform: translateY(-10px);
-      transition: color .3s, opacity .5s ease, transform .5s ease;
+      color: var(--text-light);
+      text-decoration:none;
+      font-weight:600;
+      opacity:0;
+      transform:translateY(-10px);
+      transition:color .3s, opacity .5s ease, transform .5s ease;
     }
-    .nav ul li a.nav-visible { opacity: 1; transform: translateY(0); }
+    .nav ul li a.nav-visible { opacity:1; transform:translateY(0); }
     .nav ul li a:hover { color: var(--accent); }
 
-    /* header */
+    /* HEADER */
     header {
-      margin-top: 4rem;
+      margin-top:4rem;
       background:
-        linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),
+        linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
         url('https://guiadacalistenia.shop/images/8af611b165bbce80c0f101e37af99888.jpg')
         center/cover no-repeat;
-      height: 90vh;
-      display: flex; align-items: center; justify-content: center; text-align: center;
+      height:90vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
     }
     .hero-content {
-      max-width: 800px; padding: 0 20px;
-      opacity: 0; transform: translateY(20px);
-      transition: opacity .8s ease-out, transform .8s ease-out;
+      max-width:800px;
+      padding:0 20px;
+      opacity:0;
+      transform:translateY(20px);
+      transition:opacity .8s ease-out, transform .8s ease-out;
     }
-    .hero-content.visible { opacity: 1; transform: none; }
+    .hero-content.visible { opacity:1; transform:none; }
     .hero-content h1 {
-      font-size: 3rem; margin-bottom: 1rem; color: var(--text-light);
+      font-size:3rem;
+      margin-bottom:1rem;
+      color: var(--text-light);
     }
     .hero-content p {
-      font-size: 1.3rem; margin-bottom: 1.5rem; color: var(--text-light);
+      font-size:1.3rem;
+      margin-bottom:1.5rem;
+      color: var(--text-light);
     }
     .hero-content a.btn-cta {
-      display: inline-block; background: var(--accent); color: var(--text-light);
-      padding: 1rem 2.5rem; font-size: 1.2rem; border: none; border-radius: 50px;
-      cursor: pointer; animation: pulse 1.5s infinite; transition: transform .3s;
-      text-decoration: none;
+      display:inline-block;
+      background: var(--accent);
+      color: var(--text-light);
+      padding:1rem 2.5rem;
+      font-size:1.2rem;
+      border:none;
+      border-radius:50px;
+      cursor:pointer;
+      animation:pulse 1.5s infinite;
+      transition:transform .3s;
+      text-decoration:none;
     }
-    .hero-content a.btn-cta:hover { transform: scale(1.05); }
+    .hero-content a.btn-cta:hover { transform:scale(1.05); }
     .timer {
-      margin-top: 1rem; font-size: 2rem; color: var(--accent);
-      font-weight: 700; animation: pulse 1s infinite;
+      margin-top:1rem;
+      font-size:2rem;
+      color: var(--accent);
+      font-weight:700;
+      animation:pulse 1s infinite;
     }
     @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 rgba(230,57,70,0.7); }
-      50% { box-shadow: 0 0 0 20px rgba(230,57,70,0); }
-      100% { box-shadow: 0 0 0 0 rgba(230,57,70,0); }
+      0%   { box-shadow:0 0 0 0 rgba(230,57,70,0.7); }
+      50%  { box-shadow:0 0 0 20px rgba(230,57,70,0); }
+      100% { box-shadow:0 0 0 0 rgba(230,57,70,0); }
     }
 
-    /* botão flutuante */
+    /* FLOAT BUTTON */
     .header-btn {
-      position: fixed; bottom: 2rem; right: 2rem;
-      background: var(--accent); color: var(--text-light);
-      padding: .8rem 1.5rem; border: none; border-radius: 50px;
-      cursor: pointer; opacity: 0; visibility: hidden;
-      transition: opacity .5s ease, visibility .5s ease;
-      z-index: 1001;
+      position:fixed;
+      bottom:2rem; right:2rem;
+      background: var(--accent);
+      color: var(--text-light);
+      padding:.8rem 1.5rem;
+      border:none;
+      border-radius:50px;
+      cursor:pointer;
+      opacity:0;
+      visibility:hidden;
+      transition:opacity .5s ease, visibility .5s ease;
+      z-index:1001;
     }
-    .header-btn.show { opacity: 1; visibility: visible; }
+    .header-btn.show { opacity:1; visibility:visible; }
 
-    /* scroll-reveal */
+    /* SECTIONS */
     section {
-      padding: 4rem 2rem; background: var(--section-bg);
-      opacity: 0; transform: translateY(20px);
-      transition: opacity .8s ease-out, transform .8s ease-out;
+      padding:4rem 2rem;
+      background: var(--section-bg);
+      opacity:0;
+      transform:translateY(20px);
+      transition:opacity .8s ease-out, transform .8s ease-out;
     }
-    section.visible { opacity: 1; transform: none; }
+    section.visible { opacity:1; transform:none; }
 
-    /* imagens */
+    /* IMAGES */
     .before-after img,
     .course-content img {
-      width: 100%; max-width: 800px;
-      display: block; margin: 1rem auto; border-radius: 12px;
+      width:100%;
+      max-width:800px;
+      display:block;
+      margin:1rem auto;
+      border-radius:12px;
     }
 
-    /* features */
-    .container { max-width: 1100px; margin: 0 auto; }
+    /* FEATURES */
+    .container { max-width:1100px; margin:0 auto; }
     .section-title {
-      text-align: center; margin-bottom: 2rem;
-      font-size: 2.4rem; color: var(--text-light);
-      position: relative;
+      text-align:center;
+      margin-bottom:2rem;
+      font-size:2.4rem;
+      color: var(--text-light);
+      position:relative;
     }
     .section-title::after {
-      content: ''; width: 80px; height: 4px; background: var(--accent);
-      display: block; margin: 8px auto 0;
+      content:'';
+      width:80px; height:4px;
+      background: var(--accent);
+      display:block;
+      margin:8px auto 0;
     }
     .features {
-      display: grid; gap: 2rem;
-      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+      display:grid;
+      gap:2rem;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
     }
     .feature-item {
-      background: var(--dark-bg); padding: 2rem; border-radius: 12px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.5);
-      transition: transform .3s, box-shadow .3s;
+      background: var(--dark-bg);
+      padding:2rem;
+      border-radius:12px;
+      box-shadow:0 6px 20px rgba(0,0,0,0.5);
+      transition:transform .3s, box-shadow .3s;
     }
     .feature-item:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.7);
+      transform:translateY(-8px);
+      box-shadow:0 8px 24px rgba(0,0,0,0.7);
     }
 
-    /* aprendizado e bônus */
-    .learning ul, .bonuses ul { list-style: none; padding-left: 0; }
+    /* LEARNING & BONUSES */
+    .learning ul, .bonuses ul { list-style:none; padding-left:0; }
     .learning li, .bonuses li {
-      margin-bottom: 1rem; padding-left: 1.5rem;
-      position: relative; color: var(--text-dark);
+      margin-bottom:1rem;
+      padding-left:1.5rem;
+      position:relative;
+      color: var(--text-dark);
     }
     .learning li::before, .bonuses li::before {
-      content: '•'; position: absolute; left: 0;
-      color: var(--accent); font-size: 1.2rem;
+      content:'•';
+      position:absolute; left:0;
+      color: var(--accent);
+      font-size:1.2rem;
     }
 
-    /* reviews */
+    /* REVIEWS */
     .reviews { background: var(--dark-bg); }
     .review-slider {
-      display: flex; overflow-x: auto; gap: 1.5rem;
-      padding-bottom: 1rem; scroll-behavior: smooth;
+      display:flex;
+      overflow-x:auto;
+      gap:1.5rem;
+      padding-bottom:1rem;
+      scroll-behavior:smooth;
     }
     .review-item {
-      min-width: 320px; background: var(--section-bg); padding: 2rem;
-      border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,0.6);
-      position: relative; transition: transform .3s, box-shadow .3s;
+      min-width:320px;
+      background: var(--section-bg);
+      padding:2rem;
+      border-radius:12px;
+      box-shadow:0 6px 20px rgba(0,0,0,0.6);
+      position:relative;
+      transition:transform .3s, box-shadow .3s;
     }
     .review-item:hover {
-      transform: scale(1.02); box-shadow: 0 8px 24px rgba(0,0,0,0.7);
+      transform:scale(1.02);
+      box-shadow:0 8px 24px rgba(0,0,0,0.7);
     }
     .review-item::before {
-      content: '“'; font-size: 4rem; color: var(--accent);
-      position: absolute; top: -10px; left: 20px;
+      content:'“';
+      font-size:4rem;
+      color: var(--accent);
+      position:absolute; top:-10px; left:20px;
     }
-    .review-item h4 { color: var(--accent); margin-bottom: .5rem; }
-    .review-item p { font-style: italic; color: var(--text-light); line-height: 1.4; }
-    .stars { display: flex; gap: 4px; margin-top: .5rem; }
+    .review-item h4 { color: var(--accent); margin-bottom:.5rem; }
+    .review-item p { font-style:italic; color: var(--text-light); line-height:1.4; }
+    .stars { display:flex; gap:4px; margin-top:.5rem; }
     .stars span { color: var(--star); }
 
-    /* oferta */
+    /* OFFER */
     .offer-box {
       background: linear-gradient(135deg, #e63946, #ff4e50);
-      padding: 3.5rem 2rem; border-radius: 24px;
-      text-align: center; color: var(--text-light);
-      box-shadow: 0 12px 40px rgba(230,57,70,0.6);
-      margin: 3rem 0; position: relative; overflow: hidden;
+      padding:3.5rem 2rem;
+      border-radius:24px;
+      text-align:center;
+      color: var(--text-light);
+      box-shadow:0 12px 40px rgba(230,57,70,0.6);
+      margin:3rem 0;
+      position:relative;
+      overflow:hidden;
     }
     .offer-box::before {
-      content: ''; position: absolute; top: 0; left: 0;
-      width: 100%; height: 100%;
+      content:''; position:absolute; top:0; left:0;
+      width:100%; height:100%;
       background: radial-gradient(circle at center, rgba(255,255,255,0.1), transparent 70%);
     }
-    .offer-box .old-price { text-decoration: line-through; font-size: 1.4rem; opacity: .6; }
-    .offer-box .new-price { font-size: 4rem; font-weight: 700; margin: .5rem 0; }
-    .offer-box small { display: block; margin-top: .5rem; color: var(--text-light); }
-    .offer-box .payment-methods { display: block; margin: 1.5rem auto 0; max-width: 300px; opacity: .9; }
+    .offer-box .old-price { text-decoration:line-through; font-size:1.4rem; opacity:.6; }
+    .offer-box .new-price { font-size:4rem; font-weight:700; margin:.5rem 0; }
+    .offer-box small { display:block; margin-top:.5rem; color: var(--text-light); }
+    .offer-box .payment-methods {
+      display:block; margin:1.5rem auto 0; max-width:300px; opacity:.9;
+    }
     @keyframes softPulse {
-      0%,100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255,255,255,0.4); }
-      50%      { transform: scale(1.03); box-shadow: 0 0 20px rgba(255,255,255,0.2); }
+      0%,100% { transform:scale(1); box-shadow:0 0 0 0 rgba(255,255,255,0.4); }
+      50% { transform:scale(1.03); box-shadow:0 0 20px rgba(255,255,255,0.2); }
     }
     .offer-box .btn-cta {
       animation: softPulse 2s ease-in-out infinite;
-      display: inline-block; margin-top: 1.5rem; padding: 1.2rem 3rem;
-      font-size: 1.4rem; border: none; border-radius: 50px; cursor: pointer;
-      background: var(--text-light); color: var(--accent);
-      text-decoration: none; transition: background .3s, color .3s;
+      display:inline-block;
+      margin-top:1.5rem;
+      padding:1.2rem 3rem;
+      font-size:1.4rem;
+      border:none;
+      border-radius:50px;
+      cursor:pointer;
+      background: var(--text-light);
+      color: var(--accent);
+      text-decoration:none;
+      transition:background .3s, color .3s;
     }
     .offer-box .btn-cta:hover {
-      background: transparent; color: var(--text-light);
-      border: 2px solid var(--text-light);
+      background:transparent;
+      color: var(--text-light);
+      border:2px solid var(--text-light);
     }
 
-    /* vídeo embed */
+    /* VIDEO BOX */
     .video-box {
       background: linear-gradient(135deg, #e63946, #ff4e50);
-      padding: 1rem; border-radius: 24px;
-      margin: 3rem auto; max-width: 1600px;
-      display: flex; flex-direction: column; align-items: center; text-align: center;
-      overflow: hidden;
-    }
-    .video-box iframe {
-      width: 100%; max-width: 1600px;
-      aspect-ratio: 16/9; border: none;
+      padding:1rem;
+      border-radius:24px;
+      margin:3rem auto;
+      max-width:1600px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      text-align:center;
+      overflow:hidden;
     }
     .video-box .section-title {
-      font-size: 1.2rem;
+      font-size:1.2rem;
+    }
+    .video-box iframe {
+      width:100%;
+      max-width:1600px;
+      aspect-ratio:16/9;
+      border:none;
     }
 
     /* FAQ */
-    .faq-item { background: var(--dark-bg); border-radius: 8px; margin-bottom: 1rem; overflow: hidden; }
+    .faq-item {
+      background: var(--dark-bg);
+      border-radius:8px;
+      margin-bottom:1rem;
+      overflow:hidden;
+    }
     .faq-question {
-      padding: 1rem 1.5rem; cursor: pointer; position: relative;
+      padding:1rem 1.5rem;
+      cursor:pointer;
+      position:relative;
       color: var(--text-light);
     }
     .faq-question::after {
-      content: '+'; position: absolute; right: 1.5rem; font-size: 1.5rem; color: var(--accent);
-      transition: transform .3s;
+      content:'+'; position:absolute; right:1.5rem; font-size:1.5rem; color: var(--accent);
+      transition:transform .3s;
     }
-    .faq-item.active .faq-question::after { transform: rotate(45deg); }
+    .faq-item.active .faq-question::after { transform:rotate(45deg); }
     .faq-answer {
-      max-height: 0; padding: 0 1.5rem; background: var(--section-bg);
-      color: var(--text-light); opacity: 0;
-      transition: max-height .5s ease, padding .5s ease;
+      max-height:0;
+      padding:0 1.5rem;
+      background: var(--section-bg);
+      color: var(--text-light);
+      opacity:0;
+      transition:max-height .5s ease, padding .5s ease;
     }
     .faq-item.active .faq-answer {
-      max-height: 200px; opacity: 1; padding: 1rem 1.5rem;
+      max-height:200px;
+      opacity:1;
+      padding:1rem 1.5rem;
     }
 
-    /* garantia */
+    /* GUARANTEE */
     .guarantee {
-      background: var(--section-bg); text-align: center; border-radius: 10px;
-      padding: 2rem; box-shadow: 0 6px 20px rgba(0,0,0,0.5);
-      display: flex; flex-direction: column; align-items: center; gap: 1rem;
+      background: var(--section-bg);
+      text-align:center;
+      border-radius:10px;
+      padding:2rem;
+      box-shadow:0 6px 20px rgba(0,0,0,0.5);
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:1rem;
     }
-    .guarantee img { max-width: 200px; }
-    .guarantee h2 { color: var(--accent); margin-bottom: .5rem; }
-    .guarantee p { color: var(--text-light); margin: .5rem 0; }
+    .guarantee img { max-width:200px; }
+    .guarantee h2 { color: var(--accent); margin-bottom:.5rem; }
+    .guarantee p { color: var(--text-light); margin:.5rem 0; }
 
-    /* footer */
+    /* FOOTER */
     footer {
-      text-align: center; padding: 2rem; font-size: .9rem;
-      color: var(--text-dark); background: var(--dark-bg);
+      text-align:center;
+      padding:2rem;
+      font-size:.9rem;
+      color: var(--text-dark);
+      background: var(--dark-bg);
     }
 
-    /* mobile tweaks */
+    /* MOBILE TWEAKS */
     @media (max-width: 480px) {
-      .nav { padding: 0.5rem 1rem; }
-      .nav .logo { font-size: 1rem; }
-      .nav ul { gap: 0.5rem; }
-      .nav ul li a { font-size: 0.8rem; padding: 0.3rem; }
+      .nav { padding:0.5rem 1rem; }
+      .nav .logo { font-size:1rem; }
+      .nav ul { gap:0.5rem; }
+      .nav ul li a { font-size:0.8rem; padding:0.3rem; }
 
       .container {
-        max-width: 100%;
-        padding: 0 1rem;
+        max-width:100%;
+        padding:0 1rem;
       }
 
       .offer-box .btn-cta {
-        display: flex; align-items: center; justify-content: center;
-        white-space: normal; text-align: center;
-        padding: 1.65rem 2.2rem; font-size: 0.95rem;
-        line-height: 1.2; width: 99%; margin: 1.5rem auto 0;
-        box-sizing: border-box;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        white-space:normal;
+        text-align:center;
+        padding:1.65rem 2.2rem;
+        font-size:0.95rem;
+        line-height:1.2;
+        width:99%;
+        margin:1.5rem auto 0;
+        box-sizing:border-box;
       }
 
-      /* Aumentar o bloco de vídeo em 150% e centralizar */
+      /* Ajuste do bloco de vídeo no celular:
+         largura igual aos demais blocos e altura aumentada */
       .video-box {
-        max-width: none;
-        width: 150%;
-        margin-left: -25%;
+        width:100%;
+        max-width:100%;
+        margin: 3rem auto;
       }
       .video-box iframe {
-        width: 100%; max-width: none; margin: 0;
+        width:100%;
+        height: 260px; /* aumenta verticalmente */
+        max-width:none;
+        margin:0;
       }
     }
   </style>
 </head>
 <body>
+
   <nav class="nav">
     <div class="logo">Calistenia na Prática</div>
     <ul>
@@ -318,13 +431,18 @@
       <h1>Transforme Seu Corpo com +500 Movimentos de Calistenia</h1>
       <p>Treine em casa, na rua ou onde quiser — sem academia ou equipamento!</p>
       <a href="#offer" class="btn-cta">SIM, QUERO COMEÇAR AGORA!</a>
-      <div id="timer" class="timer">Oferta termina em: <span id="countdown">00:00:00</span></div>
+      <div id="timer" class="timer">
+        Oferta termina em: <span id="countdown">00:00:00</span>
+      </div>
     </div>
     <button id="btn-aproveitar" class="header-btn">APROVEITAR OFERTA</button>
   </header>
 
   <section class="video-box">
-    <h2 class="section-title">▶️ Assista ao vídeo e entenda por que +10k de alunos escolheram a gente para conquistar resultados rápidos e elevar seu bem‑estar! 🌟💪</h2>
+    <h2 class="section-title">
+      ▶️ Assista ao vídeo e entenda por que +10k de alunos escolheram a gente
+      para conquistar resultados rápidos e elevar seu bem‑estar! 🌟💪
+    </h2>
     <iframe title="vimeo-player"
             src="https://player.vimeo.com/video/1102847107?h=e0cb9a7e65&autoplay=1"
             allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
@@ -345,9 +463,18 @@
   <section id="features" class="container">
     <h2 class="section-title">O Que Está Incluído</h2>
     <div class="features">
-      <div class="feature-item"><h3>Acesso Imediato</h3><p>Desafio +500 Movimentos para queima de gordura.</p></div>
-      <div class="feature-item"><h3>Gifs Interativos</h3><p>Execução perfeita com animações passo a passo.</p></div>
-      <div class="feature-item"><h3>Treinos Dinâmicos</h3><p>Planejamento inteligente para evolução constante.</p></div>
+      <div class="feature-item">
+        <h3>Acesso Imediato</h3>
+        <p>Desafio +500 Movimentos para queima de gordura.</p>
+      </div>
+      <div class="feature-item">
+        <h3>Gifs Interativos</h3>
+        <p>Execução perfeita com animações passo a passo.</p>
+      </div>
+      <div class="feature-item">
+        <h3>Treinos Dinâmicos</h3>
+        <p>Planejamento inteligente para evolução constante.</p>
+      </div>
     </div>
   </section>
 
@@ -376,9 +503,21 @@
   <section id="reviews" class="reviews container">
     <h2 class="section-title">O Que Nossos Alunos Dizem</h2>
     <div class="review-slider">
-      <div class="review-item"><h4>João Silva</h4><div class="stars">★★★★★</div><p>Em apenas 2 semanas, minha força explodiu...</p></div>
-      <div class="review-item"><h4>Mariana Costa</h4><div class="stars">★★★★★</div><p>Hoje faço front lever com controle total...</p></div>
-      <div class="review-item"><h4>Lucas Pereira</h4><div class="stars">★★★★★</div><p>Os vídeos e GIFs são impecáveis...</p></div>
+      <div class="review-item">
+        <h4>João Silva</h4>
+        <div class="stars">★★★★★</div>
+        <p>Em apenas 2 semanas, minha força explodiu...</p>
+      </div>
+      <div class="review-item">
+        <h4>Mariana Costa</h4>
+        <div class="stars">★★★★★</div>
+        <p>Hoje faço front lever com controle total...</p>
+      </div>
+      <div class="review-item">
+        <h4>Lucas Pereira</h4>
+        <div class="stars">★★★★★</div>
+        <p>Os vídeos e GIFs são impecáveis...</p>
+      </div>
     </div>
   </section>
 
@@ -394,9 +533,18 @@
 
   <section id="faq" class="container">
     <h2 class="section-title">Perguntas Frequentes</h2>
-    <div class="faq-item"><div class="faq-question">O curso é indicado para iniciantes?</div><div class="faq-answer"><p>Sim, do básico ao avançado.</p></div></div>
-    <div class="faq-item"><div class="faq-question">Preciso de equipamentos?</div><div class="faq-answer"><p>Não, só peso corporal.</p></div></div>
-    <div class="faq-item"><div class="faq-question">Como recebo o acesso?</div><div class="faq-answer"><p>Após compra, envio login por e‑mail.</p></div></div>
+    <div class="faq-item">
+      <div class="faq-question">O curso é indicado para iniciantes?</div>
+      <div class="faq-answer"><p>Sim, do básico ao avançado.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Preciso de equipamentos?</div>
+      <div class="faq-answer"><p>Não, só peso corporal.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Como recebo o acesso?</div>
+      <div class="faq-answer"><p>Após compra, envio login por e‑mail.</p></div>
+    </div>
   </section>
 
   <section class="container guarantee">
@@ -415,7 +563,7 @@
     document.querySelectorAll('.nav ul li a').forEach((link, i) =>
       setTimeout(() => link.classList.add('nav-visible'), 200 + i * 100)
     );
-    // scroll-reveal
+    // reveal on scroll
     const observer = new IntersectionObserver((entries, obs) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -454,4 +602,4 @@
   </script>
 </body>
 </html>
-
+```
